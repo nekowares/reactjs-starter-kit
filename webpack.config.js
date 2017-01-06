@@ -3,7 +3,8 @@ var webpack = require('webpack');
 
 module.exports = {
   entry: {
-    bundle: './src/js/main.jsx'
+    bundle: './src/js/main.jsx',
+    style:  './src/css/main.js'
   },
   output: {
     path: path.join(__dirname, 'dist'),
@@ -19,6 +20,10 @@ module.exports = {
         query: {
           presets: ['es2015', 'react', 'react-hmre']
         }
+      },
+      {
+        test: /\.scss$/,
+        loaders: ['style', 'css', 'sass', 'postcss']
       }
     ]
   },
@@ -26,8 +31,12 @@ module.exports = {
     extensions: ['', '.js', '.jsx', '.css', '.scss']
   },
   plugins: [
-    new webpack.HotModuleReplacementPlugin()
+    new webpack.HotModuleReplacementPlugin(),
   ],
+  postcss: [
+    require('autoprefixer')({ browsers:["last 2 version"] })
+  ],
+  devtool: 'source-map',
   devServer: {
     historyApiFallback: true,
     hot: true,
