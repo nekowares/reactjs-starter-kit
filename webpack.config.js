@@ -1,5 +1,6 @@
 var path = require('path');
 var webpack = require('webpack');
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: {
@@ -23,7 +24,7 @@ module.exports = {
       },
       {
         test: /\.scss$/,
-        loaders: ['style', 'css', 'sass', 'postcss']
+        loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap!postcss')
       }
     ]
   },
@@ -32,11 +33,12 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
+    new ExtractTextPlugin('[name].css')
   ],
   postcss: [
     require('autoprefixer')({ browsers:["last 2 version"] })
   ],
-  devtool: 'source-map',
+  devtool: '#source-map',
   devServer: {
     historyApiFallback: true,
     hot: true,
