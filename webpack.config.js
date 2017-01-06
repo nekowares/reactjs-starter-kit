@@ -13,10 +13,17 @@ module.exports = {
     filename: '[name].js'
   },
   module: {
+    preLoaders: [
+      {
+        test: /\.jsx?$/,
+        exclude: /node_modules/,
+        loader: 'eslint',
+      }
+    ],
     loaders: [
       {
         test: /\.jsx?$/,
-        loader: 'babel-loader',
+        loader: 'babel',
         exclude: /node_modules/,
         query: {
           presets: ['es2015', 'react', 'react-hmre']
@@ -38,6 +45,9 @@ module.exports = {
   postcss: [
     require('autoprefixer')({ browsers:["last 2 version"] })
   ],
+  eslint: {
+    configFile: './.eslintrc'
+  },
   devtool: '#source-map',
   devServer: {
     historyApiFallback: true,
