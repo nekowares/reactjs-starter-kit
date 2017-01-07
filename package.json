@@ -33,6 +33,7 @@
     "node-sass": "^4.1.1",
     "postcss-loader": "^1.2.1",
     "sass-loader": "^4.1.1",
+    "sasslint-loader": "0.0.1",
     "webpack": "^1.14.0",
     "webpack-dev-server": "^1.16.2"
   }

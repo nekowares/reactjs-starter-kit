@@ -18,6 +18,10 @@ module.exports = {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         loader: 'eslint',
+      },
+      {
+        test: /\.s[a|c]ss$/,
+        loader: 'sasslint'
       }
     ],
     loaders: [
@@ -30,7 +34,7 @@ module.exports = {
         }
       },
       {
-        test: /\.scss$/,
+        test: /\.s[a|c]ss$/,
         loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap!postcss')
       }
     ]
@@ -47,6 +51,9 @@ module.exports = {
   ],
   eslint: {
     configFile: './.eslintrc'
+  },
+  sasslint: {
+    configFile: './.sass-lint.yml'
   },
   devtool: '#source-map',
   devServer: {
