@@ -4,7 +4,7 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
 module.exports = {
   entry: {
-    bundle: './src/js/main.jsx',
+    bundle: './src/js/index.js',
     style:  './src/css/main.js'
   },
   output: {
@@ -15,26 +15,26 @@ module.exports = {
   module: {
     preLoaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_modules/,
         loader: 'eslint',
       },
       {
-        test: /\.s[a|c]ss$/,
+        test: /\.(scss|sass)$/,
         loader: 'sasslint'
       }
     ],
     loaders: [
       {
-        test: /\.jsx?$/,
+        test: /\.(js|jsx)$/,
         loader: 'babel',
         exclude: /node_modules/,
         query: {
-          presets: ['es2015', 'react', 'react-hmre']
+          presets: ['es2015', 'stage-0', 'react', 'react-hmre']
         }
       },
       {
-        test: /\.s[a|c]ss$/,
+        test: /\.(scss|sass)$/,
         loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap!postcss')
       }
     ]

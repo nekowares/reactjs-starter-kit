@@ -17,7 +17,7 @@
 
 
 files:
-  include: '**/*.s+(a|c)ss'
+  include: '**/*\.(sass|scss)'
 options:
   formatter: stylish
   merge-default-rules: false
