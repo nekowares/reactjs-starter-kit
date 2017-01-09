@@ -20,6 +20,7 @@
     ],
     "rules": {
         "arrow-parens": [2, "always"],
+        "eol-last": ["error", "always"],
         "eqeqeq": 2,
         "indent": ["error", 2],
         "no-console": 0,
