@@ -38,7 +38,7 @@ rules:
   extends-before-declarations: 1
   extends-before-mixins: 1
   final-newline:
-    - 0
+    - 1
     - include: true
   force-attribute-nesting: 1
   force-element-nesting: 1
