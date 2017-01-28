@@ -1,6 +1,7 @@
 var path = require('path');
 var webpack = require('webpack');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var DashboardPlugin = require('webpack-dashboard/plugin');
 
 module.exports = {
   entry: {
@@ -44,7 +45,8 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    new ExtractTextPlugin('[name].css')
+    new ExtractTextPlugin('[name].css'),
+    new DashboardPlugin()
   ],
   postcss: [
     require('autoprefixer')({ browsers:["last 2 version"] })

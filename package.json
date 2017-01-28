@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack",
-    "start": "webpack-dev-server",
+    "build": "webpack-dashboard -- webpack",
+    "start": "webpack-dashboard -- webpack-dev-server",
     "lint": "eslint src/js/**/*.jsx"
   },
   "author": "",
@@ -39,6 +39,7 @@
     "sass-loader": "^4.1.1",
     "sasslint-loader": "0.0.1",
     "webpack": "^1.14.0",
+    "webpack-dashboard": "^0.3.0",
     "webpack-dev-server": "^1.16.2"
   }
 }
