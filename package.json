@@ -8,7 +8,9 @@
     "build": "webpack-dashboard -- webpack --config webpack.config.production.js --progress",
     "start": "webpack-dashboard -- webpack-dev-server",
     "watch": "webpack-dashboard -- webpack --watch --progress",
-    "lint": "eslint src/js/**/*.jsx"
+    "eslint": "eslint src/js/**/*.js src/js/**/*.jsx",
+    "sass-lint": "sass-lint -v -q src/css/**/*.scss",
+    "lint": "npm run eslint && npm run sass-lint"
   },
   "author": "",
   "license": "ISC",
@@ -37,6 +39,7 @@
     "node-sass": "^4.1.1",
     "postcss-loader": "^1.2.1",
     "redux-devtools": "^3.3.2",
+    "sass-lint": "^1.10.2",
     "sass-loader": "^4.1.1",
     "sasslint-loader": "0.0.1",
     "webpack": "^1.14.0",
