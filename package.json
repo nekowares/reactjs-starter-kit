@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack-dashboard -- webpack",
-    "start": "webpack-dashboard -- webpack-dev-server --hot --inline",
-    "watch": "webpack-dashboard -- webpack --watch",
+    "build": "webpack-dashboard -- webpack --config webpack.config.production.js --progress",
+    "start": "webpack-dashboard -- webpack-dev-server",
+    "watch": "webpack-dashboard -- webpack --watch --progress",
     "lint": "eslint src/js/**/*.jsx"
   },
   "author": "",

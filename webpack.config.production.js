@@ -49,9 +49,10 @@ module.exports = {
     new DashboardPlugin(),
     new webpack.DefinePlugin({
       'process.env': {
-        NODE_ENV: JSON.stringify('development')
+        NODE_ENV: JSON.stringify('production')
       }
-    })
+    }),
+    new webpack.optimize.UglifyJsPlugin()
   ],
   postcss: [
     require('autoprefixer')({ browsers:["last 2 version"] })
